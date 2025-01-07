@@ -165,9 +165,12 @@ SELECT * FROM tb_products;
 ALTER TABLE tb_products ADD PRIMARY KEY (id);
 
 -- 20) Selecting Data and Formatting 'price' As Brazilian Currency
+-- CONCAT: https://www.w3schools.com/sql/func_mysql_concat.asp
+-- FORMAT: https://www.w3schools.com/sql/func_mysql_format.asp
 SELECT name AS Product_Name, CONCAT('R$ ', FORMAT(price, 2, 'pt_BR')) AS Price FROM tb_products;
 
 -- 21) Selecting Data and Formatting 'expiration_date' to Brazilian Format
+-- DATE_FORMAT: https://www.w3schools.com/sql/func_mysql_date_format.asp
 SELECT name AS Product_Name, DATE_FORMAT(expiration_date, '%d/%m/%Y') AS Expiration_Date FROM tb_products;
 
 -- 22) Delete a Table (DROP TABLE <table-name>)
@@ -175,3 +178,11 @@ DROP TABLE tb_products;
 
 -- 23) Delete the Database (DROP DATABASE <database-name>)
 DROP DATABASE db_greengrocery;
+
+/* Bonus */
+
+--- View Table Structure
+DESC tb_products;
+
+--- Discover Database Collation
+SELECT @@collation_database;
