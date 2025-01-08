@@ -18,12 +18,12 @@ USE db_greengrocery;
 
 -- 3) Create Table
 CREATE TABLE tb_products(
-	id BIGINT AUTO_INCREMENT, # 'AUTO_INCREMENT' is a type of DDL command
-    name_product VARCHAR(255) NOT NULL, # 'NOT NULL' is a type of DDL command
+	id BIGINT AUTO_INCREMENT, -- 'AUTO_INCREMENT' is a type of DDL command
+    name_product VARCHAR(255) NOT NULL, -- 'NOT NULL' is a type of DDL command
     quantity INT,
     expiration_date DATE,
     price DECIMAL(6,2) NOT NULL,
-    PRIMARY KEY (id) # 'PRIMARY KEY' is a type of DDL command
+    PRIMARY KEY (id) -- 'PRIMARY KEY' is a type of DDL command
 );
 
 -- 4) Inserting Data Into the Table
