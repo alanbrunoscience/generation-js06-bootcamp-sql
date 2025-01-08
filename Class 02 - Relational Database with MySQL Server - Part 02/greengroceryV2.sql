@@ -6,7 +6,7 @@ CREATE TABLE tb_products (
 	id BIGINT AUTO_INCREMENT,
     product_name VARCHAR(255) NOT NULL,
     quantity INT,
-    expiration_date DATE,
+    expiration_date DATE NULL,
     price DECIMAL(6,2) NOT NULL,
     PRIMARY KEY (id)
 );
