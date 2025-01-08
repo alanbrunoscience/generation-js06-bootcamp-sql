@@ -157,7 +157,7 @@ two tables.
 -- Obs.: INNER JOIN prioritizes the right table.
 SELECT tb_products.id, product_name, price, quantity, tb_categories.prod_description 
 FROM tb_products INNER JOIN tb_categories 
-ON tb_products.category_id = tb_categories.id ORDER BY tb_products.id;
+ON tb_products.category_id = tb_categories.id ORDER BY tb_products.id; -- ON specifies what I need to compare
 
 -- LEFT JOIN
 -- In LEFT JOIN queries, the result will not only show the rows that are common in both tables, associated through the Primary 
