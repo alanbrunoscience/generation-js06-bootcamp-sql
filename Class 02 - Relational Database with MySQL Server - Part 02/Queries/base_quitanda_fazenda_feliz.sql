@@ -89,4 +89,5 @@ SELECT tb_categorias.descricao, avg(preco) AS preco_medio
 FROM tb_produtos INNER JOIN  tb_categorias
 ON tb_produtos.categoria_id = tb_categorias.id
 GROUP BY tb_categorias.descricao
-HAVING preco_medio > 5;
+HAVING preco_medio > 5
+ORDER BY tb_categorias.descricao;
