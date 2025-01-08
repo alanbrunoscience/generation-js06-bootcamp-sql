@@ -85,7 +85,8 @@ FROM tb_produtos RIGHT JOIN tb_categorias
 ON tb_produtos.categoria_id = tb_categorias.id;
 
 -- Group By - Agrupa os valores a partir de um atributo
-SELECT tb_categorias.descricao, avg(preco) AS Preço_Médio
+SELECT tb_categorias.descricao, avg(preco) AS preco_medio
 FROM tb_produtos INNER JOIN  tb_categorias
 ON tb_produtos.categoria_id = tb_categorias.id
-GROUP BY tb_categorias.descricao;
+GROUP BY tb_categorias.descricao
+HAVING preco_medio > 5;
