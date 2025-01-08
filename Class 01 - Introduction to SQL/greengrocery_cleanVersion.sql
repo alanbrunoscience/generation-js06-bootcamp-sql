@@ -97,6 +97,9 @@ ALTER TABLE tb_produtos ADD PRIMARY KEY (id);
 -- Modificar o nome de um Atributo da Tabela
 ALTER TABLE tb_produtos CHANGE nome nomeproduto varchar(255);
 
+-- Modificar o nome de uma Coluna da tabela
+ALTER TABLE tb_produtos CHANGE COLUMN nome nomeproduto varchar(255) NOT NULL;
+
 -- Apagar todos os dados da tabela (Não é possível desfazer)
 DELETE FROM tb_produtos;
 
