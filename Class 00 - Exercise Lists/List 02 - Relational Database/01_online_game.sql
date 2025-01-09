@@ -62,5 +62,3 @@ FROM tb_characters
 INNER JOIN tb_class
 ON tb_characters.character_type = tb_class.id
 WHERE tb_class.character_type = "Archer";
-
-
