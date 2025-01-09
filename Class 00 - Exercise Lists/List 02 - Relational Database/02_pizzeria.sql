@@ -62,5 +62,3 @@ FROM tb_pizzas
 INNER JOIN tb_categories
 ON tb_pizzas.pizza_category = tb_categories.id
 WHERE tb_categories.pizza_category = "Sweet";
-
-
