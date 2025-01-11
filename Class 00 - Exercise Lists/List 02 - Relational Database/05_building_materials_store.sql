@@ -108,7 +108,7 @@ VALUES
     (2, 0.50, 5, 1),
     (3, 12.50, 10, 2),
     (4, 30, 3, 3),
-    (5, 4.80, 8, 4), ,
+    (5, 4.80, 8, 4),
     (6, 6.50, 4, 5),
     (7, 40, 7, 1),
     (8, 15, 10, 2),
@@ -116,3 +116,38 @@ VALUES
     (10, 5, 3, 4);
 
 SELECT * FROM tb_supplier_products;
+
+-- Queries
+SELECT tb_supplier_products.id, tb_products.material_name AS material_name,  tb_products.stock_quantity AS stock_quantity, tb_products.unit_of_measure AS unit_of_measure, CONCAT('R$ ', FORMAT(price_per_unit, 2, 'pt_BR')) AS price, tb_suppliers.supplier_name AS supplier_name
+FROM tb_supplier_products
+INNER JOIN tb_products
+ON tb_supplier_products.product_id = tb_products.id
+INNER JOIN tb_suppliers
+ON tb_supplier_products.supplier_id = tb_suppliers.id
+WHERE price_per_unit > 10 ORDER BY tb_supplier_products.id;
+
+SELECT tb_supplier_products.id, tb_products.material_name AS material_name,  tb_products.stock_quantity AS stock_quantity, tb_products.unit_of_measure AS unit_of_measure, CONCAT('R$ ', FORMAT(price_per_unit, 2, 'pt_BR')) AS price, tb_suppliers.supplier_name AS supplier_name
+FROM tb_supplier_products
+INNER JOIN tb_products
+ON tb_supplier_products.product_id = tb_products.id
+INNER JOIN tb_suppliers
+ON tb_supplier_products.supplier_id = tb_suppliers.id
+WHERE price_per_unit
+BETWEEN 20.00 AND 50.00 ORDER BY tb_supplier_products.id;
+
+SELECT tb_supplier_products.id, tb_products.material_name AS material_name
+FROM tb_supplier_products
+INNER JOIN tb_products
+ON tb_supplier_products.product_id = tb_products.id
+WHERE tb_products.material_name LIKE "%c%";
+
+SELECT tb_products.id, tb_products.material_name, tb_products.description, tb_products.stock_quantity, tb_products.unit_of_measure, tb_categories.category_name AS category_name, tb_categories.description AS category_description, tb_categories.created_at AS created_at, tb_categories.updated_at AS updated_at
+FROM tb_products
+INNER JOIN tb_categories
+ON tb_products.prod_category = tb_categories.id;
+
+SELECT tb_products.id, tb_products.material_name, tb_products.description, tb_products.stock_quantity, tb_products.unit_of_measure, tb_categories.category_name AS category_name
+FROM tb_products
+INNER JOIN tb_categories
+ON tb_products.prod_category = tb_categories.id
+WHERE tb_categories.category_name = "Plumbing Supplies";
